@@ -14,6 +14,9 @@ dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation(libs.kotlin.stdlib.jvm)
 
+    implementation(libs.tuprolog.core)
+    implementation(libs.tuprolog.parser.core)
+
     // Use the Kotlin test library.
     testImplementation(libs.kotlin.test)
     // Use the Kotlin JUnit integration.

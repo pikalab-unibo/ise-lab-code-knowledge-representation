@@ -8,8 +8,8 @@ dependencyResolutionManagement {
 //    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 }
 
-rootProject.name = "ise-lab-code-template"
-include("exercise")
+rootProject.name = "ise-lab-code-knowledge-representation"
+include("exercise-1")
 
 gradleEnterprise {
     buildScan {
