@@ -13,7 +13,7 @@ import kotlin.test.assertTrue
 @Suppress("USELESS_IS_CHECK")
 class TermCreation {
     /**
-     * Supports parsing terms and clauses out of strings using the Prolog syntax for terms
+     * Supports parsing terms and clauses out of strings using the Prolog syntax for both
      */
     private val parser = TermParser.withNoOperator
 

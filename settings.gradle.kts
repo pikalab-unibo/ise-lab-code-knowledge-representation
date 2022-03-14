@@ -10,7 +10,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "ise-lab-code-knowledge-representation"
 
-val n = 2
+val n = 3
 
 for (i in 1 .. n) {
     include("exercise-$i")
