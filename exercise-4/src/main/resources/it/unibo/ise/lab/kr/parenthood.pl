@@ -1,0 +1,14 @@
+parent(joseph, jacob).
+parent(joseph, rachel).
+parent(jacob, isaac).
+parent(jacob, rebecca).
+parent(rachel, labam).
+parent(isaac, sarah).
+parent(isaac, abraham).
+parent(rebecca, beutel).
+parent(labam, beutel).
+parent(abraham, terah).
+parent(beutel, milcah).
+parent(haran, nahor).
+parent(haran, milcah).
+parent(terah, haran).

@@ -5,14 +5,14 @@ import it.unibo.tuprolog.core.Struct
 import it.unibo.tuprolog.core.Term
 
 /**
- * A type for functors, i.e. function names of given arities.
- * A `n`-ary functor named `f` can be used to construct [Struct]ures having `n` arguments.
- * Functors of arity equal to 0 are for constants, a.k.a. [Atom]s.
+ * A type for functors (or predications), i.e. function (or predicate) names of given arities.
+ * A `n`-ary symbol named `f` can be used to construct [Struct]ures having `n` arguments.
+ * Symbols of arity equal to 0 are for constants, a.k.a. [Atom]s.
  *
  * @param name a [String] representing the symbol
  * @param arity a non-negative [Int] representing the arity of the symbol
  */
-data class Functor(val name: String, val arity: Int = 0) {
+data class Symbol(val name: String, val arity: Int = 0) {
     init { require(arity >= 0) }
 }
 
@@ -24,11 +24,11 @@ data class Functor(val name: String, val arity: Int = 0) {
  * 3. let `H₂` be the set of [Term]s attained by adding the [expansion] of `H₁` to `H₁` itself
  * 4. let `Hᵢ` be the set of [Term]s attained by adding the [expansion] of `Hᵢ₋₁` to `Hᵢ₋₁` itself
  * 5. and so on, up to `i == [max]
- * @param functors is the set of [Functor]s spawning the Herbrand universe
+ * @param functors is the set of [Symbol]s spawning the Herbrand universe
  * @param max limits the computation of the Herbrand universe to `Hₘₐₓ`. Negative values are interpreted as infinity
  * @return a [Sequence] lazily enumerating all the terms in `Hₘₐₓ`
  */
-fun herbrand(vararg functors: Functor, max: Int = -1): Sequence<Term> {
+fun herbrand(vararg functors: Symbol, max: Int = -1): Sequence<Term> {
     val constants = functors.filter { it.arity == 0 }.map { Atom.of(it.name) }.toSet()
     val functorsWithArity = functors.filter { it.arity > 0 }.toSet()
     return sequence {
@@ -51,10 +51,10 @@ fun herbrand(vararg functors: Functor, max: Int = -1): Sequence<Term> {
  * Hᵢ₊₁ - Hᵢ
  * ```
  * @param universe the partial Herbrand universe `Hᵢ`, spawned by [functors]
- * @param functors a set of [Functor]s, i.e. function names of given arities
+ * @param functors a set of [Symbol]s, i.e. function names of given arities
  * @return the [Sequence] of [Term]s in `Hᵢ₊₁ - Hᵢ`
  */
-internal fun expansion(universe: Set<Term>, functors: Set<Functor>): Sequence<Term> {
+internal fun expansion(universe: Set<Term>, functors: Set<Symbol>): Sequence<Term> {
     return sequence {
         for ((name, arity) in functors) {
             for (arguments in cartesianPower(universe, arity)) {

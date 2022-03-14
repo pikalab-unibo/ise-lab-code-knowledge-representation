@@ -8,9 +8,9 @@ import kotlin.test.assertEquals
 
 class TestHerbrandPeano {
     private val functors = arrayOf(
-        Functor("a"),
-        Functor("b"),
-        Functor("f", 2)
+        Symbol("a"),
+        Symbol("b"),
+        Symbol("f", 2)
     )
 
     private val peanoIntegers: Sequence<Term>
