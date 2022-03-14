@@ -26,7 +26,7 @@ class TermCreation {
     fun atomCreation() {
         val representations = listOf("anAtom", "'an atom with spaces'")
         for (repr in representations) {
-            val term: Term = Atom.of(repr.replace("'", ""))
+            val term: Term = TODO("Create an $Atom term whose representation is equal to $repr")
             val expected = parser.parseTerm(repr)
 
             assertEquals(expected, term)
@@ -42,7 +42,7 @@ class TermCreation {
     fun integerCreation() {
         val integers = listOf(1, 2, 0, -1)
         for (int in integers) {
-            val term: Term = Integer.of(int)
+            val term: Term = TODO("Create an $Integer term whose value is equal to $int")
             val representation = int.toString()
             val expected = parser.parseTerm(representation)
 
@@ -59,7 +59,7 @@ class TermCreation {
     fun realCreation() {
         val representations = listOf("1.2", "-3.4", "0.0", kotlin.math.PI.toString())
         for (repr in representations) {
-            val term: Term = Real.of(repr)
+            val term: Term = TODO("Create a $Real term whose representation is equal to $repr")
             val expected = parser.parseTerm(repr)
 
             assertEquals(expected, term)
@@ -73,18 +73,18 @@ class TermCreation {
 
     @Test
     fun variableCreation() {
-        val representations = listOf("A", "B", "_", "_A", "_B", "SomeVariable")
-        for (repr in representations) {
-            val term: Term = Var.of(repr)
-            val expected = parser.parseTerm(repr)
+        val names = listOf("A", "B", "_", "_A", "_B", "SomeVariable")
+        for (name in names) {
+            val term: Term = TODO("Create a ${Var}iable term whose name is equal to $name")
+            val expected = parser.parseTerm(name)
 
             assertNotEquals(expected, term) // notice this!
             assertTrue(expected.equals(term, useVarCompleteName = false))
             assertTrue(term is Var)
-            assertEquals(repr, term.name)
-            assertEquals(repr, formatter.format(term))
-            assertTrue(term.completeName.startsWith(repr + "_"))
-            assertEquals(repr == "_", term.isAnonymous)
+            assertEquals(name, term.name)
+            assertEquals(name, formatter.format(term))
+            assertTrue(term.completeName.startsWith(name + "_"))
+            assertEquals(name == "_", term.isAnonymous)
         }
     }
 
@@ -92,12 +92,7 @@ class TermCreation {
     fun structCreation() {
         val representation = "person(giovanni, ciatto, 30)"
 
-        val term: Term = Struct.of(
-            "person",
-            Atom.of("giovanni"),
-            Atom.of("ciatto"),
-            Integer.of(30)
-        )
+        val term: Term = TODO("Create a ${Struct}ured term whose representation is equal to $representation")
         val expected = parser.parseTerm(representation)
 
         assertEquals(expected, term)
@@ -124,11 +119,7 @@ class TermCreation {
     fun listCreation() {
         val representation = "[1, a, f(x)]"
 
-        val term: Term = List.of(
-            Integer.of(1),
-            Atom.of("a"),
-            Struct.of("f", Atom.of("x"))
-        )
+        val term: Term = TODO("Create a ${List} term whose representation is equal to $representation")
         val expected = parser.parseTerm(representation)
 
         assertEquals(expected, term)
