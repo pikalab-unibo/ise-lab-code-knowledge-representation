@@ -19,6 +19,7 @@ tuprolog-repl = { module = "it.unibo.tuprolog:repl-jvm", version.ref = "tuprolog
 tuprolog-core = { module = "it.unibo.tuprolog:core-jvm", version.ref = "tuprolog" }
 tuprolog-unify = { module = "it.unibo.tuprolog:unify-jvm", version.ref = "tuprolog" }
 tuprolog-theory = { module = "it.unibo.tuprolog:theory-jvm", version.ref = "tuprolog" }
+tuprolog-solve = { module = "it.unibo.tuprolog:solve-jvm", version.ref = "tuprolog" }
 tuprolog-solve-classic = { module = "it.unibo.tuprolog:solve-classic-jvm", version.ref = "tuprolog" }
 tuprolog-parser-core = { module = "it.unibo.tuprolog:parser-core-jvm", version.ref = "tuprolog" }
 tuprolog-parser-theory = { module = "it.unibo.tuprolog:parser-theory-jvm", version.ref = "tuprolog" }

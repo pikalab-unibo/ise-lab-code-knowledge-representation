@@ -9,7 +9,12 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "ise-lab-code-knowledge-representation"
-include("exercise-1")
+
+val n = 2
+
+for (i in 1 .. n) {
+    include("exercise-$i")
+}
 
 gradleEnterprise {
     buildScan {
