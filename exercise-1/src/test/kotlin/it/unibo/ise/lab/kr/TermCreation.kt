@@ -15,7 +15,7 @@ class TermCreation {
     /**
      * Supports parsing terms and clauses out of strings using the Prolog syntax for both
      */
-    private val parser = TermParser.withNoOperator
+    private val parser = TermParser.withNoOperator()
 
     /**
      * Supports formatting a term in user-friendly Prolog syntax

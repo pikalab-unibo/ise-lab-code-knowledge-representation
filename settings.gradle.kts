@@ -2,8 +2,6 @@ plugins {
     id("com.gradle.enterprise") version "3.11.4"
 }
 
-enableFeaturePreview("VERSION_CATALOGS")
-
 dependencyResolutionManagement {
 //    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 }

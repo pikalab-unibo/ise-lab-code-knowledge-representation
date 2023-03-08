@@ -12,7 +12,7 @@ class ClauseCreation {
     /**
      * Supports parsing theories out of strings using the Prolog syntax
      */
-    private val parser = ClausesParser.withStandardOperators
+    private val parser = ClausesParser.withStandardOperators()
 
     @Test
     fun simpleTheory() {

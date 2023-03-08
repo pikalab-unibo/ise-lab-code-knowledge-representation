@@ -8,7 +8,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class TestHerbrand {
-    private val parser = TermParser.withNoOperator
+    private val parser = TermParser.withNoOperator()
 
     private val functors = arrayOf(
         Symbol("a"),

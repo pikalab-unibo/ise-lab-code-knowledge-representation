@@ -11,19 +11,19 @@ object Theories {
             ?: throw IllegalStateException("No such a resource: $fileName")
 
     val parenthood: Theory by lazy {
-        ClausesReader.withDefaultOperators.readTheory(
+        ClausesReader.withDefaultOperators().readTheory(
             open("parenthood.pl")
         )
     }
 
     val genders: Theory by lazy {
-        ClausesReader.withDefaultOperators.readTheory(
+        ClausesReader.withDefaultOperators().readTheory(
             open("genders.pl")
         )
     }
 
     val grandParenthood : Theory by lazy {
-        ClausesParser.withDefaultOperators.parseTheory(
+        ClausesParser.withDefaultOperators().parseTheory(
             """
             grandparent(X, Y) :- parent(X, Z), parent(Z, Y). 
             """.trimIndent()
@@ -31,7 +31,7 @@ object Theories {
     }
 
     val motherhood : Theory by lazy {
-        ClausesParser.withDefaultOperators.parseTheory(
+        ClausesParser.withDefaultOperators().parseTheory(
             """
             mother(X, Y) :- parent(X, Y), female(X).
             """.trimIndent()
@@ -39,7 +39,7 @@ object Theories {
     }
 
     val fatherhood : Theory by lazy {
-        ClausesParser.withDefaultOperators.parseTheory(
+        ClausesParser.withDefaultOperators().parseTheory(
             """
             father(X, Y) :- parent(X, Y), male(X).
             """.trimIndent()

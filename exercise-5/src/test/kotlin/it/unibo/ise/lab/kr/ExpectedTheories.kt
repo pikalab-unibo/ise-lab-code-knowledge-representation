@@ -11,13 +11,13 @@ object ExpectedTheories {
             ?: throw IllegalStateException("No such a resource: $fileName")
 
     val iris: Theory by lazy {
-        ClausesReader.withDefaultOperators.readTheory(
+        ClausesReader.withDefaultOperators().readTheory(
             open("iris-relational.pl")
         )
     }
 
     val wines: Theory by lazy {
-        ClausesReader.withDefaultOperators.readTheory(
+        ClausesReader.withDefaultOperators().readTheory(
             open("wines-relational.pl")
         )
     }
