@@ -1,5 +1,5 @@
 [versions]
-kotlin = "2.0.20"
+kotlin = "2.0.21"
 tuprolog = "0.32.5"
 
 [plugins]
